@@ -1,0 +1,175 @@
+$inputBorder: 1px solid #dce2e5;
+@import '../../styles/shared';
+
+.sideNav {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 270px;
+    background: url("../../assets/images/sidebarMountains.svg") no-repeat, linear-gradient(329deg, #00602c, #1f8226);
+    background-position: bottom;
+    color: white;
+
+    .wideroeLogo {
+        padding: 20px 65px;
+    }
+
+    .findTickets,
+    .findTktExpand {
+        // width: 156%;
+        margin-left: 28px;
+        margin-top: 25px;
+        padding: 17px 20px;
+        transition: all .5s ease;
+        color: #f9fff4;
+        margin: 25px 0 0;
+        padding: 35px 20px 20px;
+
+        .tripDiv {
+            margin: 35px 0 20px;
+            padding: 0;
+
+            .triptype {
+
+                [type="radio"]:checked,
+                [type="radio"]:not(:checked) {
+                    position: absolute;
+                    left: -9999px;
+                }
+
+                [type="radio"]:checked+label,
+                [type="radio"]:not(:checked)+label {
+                    position: relative;
+                    padding-left: 28px;
+                    padding-right: 10px;
+                    cursor: pointer;
+                    line-height: 20px;
+                    display: inline-block;
+                    color: #fff;
+                }
+
+                [type="radio"]:checked+label:before,
+                [type="radio"]:not(:checked)+label:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 18px;
+                    height: 18px;
+                    border: 1px solid #ddd;
+                    border-radius: 100%;
+                    background: #fff;
+                }
+
+                [type="radio"]:checked+label:after,
+                [type="radio"]:not(:checked)+label:after {
+                    content: '';
+                    width: 12px;
+                    height: 12px;
+                    background: #359E3A;
+                    ;
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    border-radius: 100%;
+                    -webkit-transition: all 0.2s ease;
+                    transition: all 0.2s ease;
+                }
+
+                [type="radio"]:not(:checked)+label:after {
+                    opacity: 0;
+                    -webkit-transform: scale(0);
+                    transform: scale(0);
+                }
+
+                [type="radio"]:checked+label:after {
+                    opacity: 1;
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+            }
+        }
+
+
+    }
+
+
+
+    .inputContainer {
+        position: relative;
+
+        .inputFields {
+            color: $color-black;
+            bottom: 50%;
+            top: 20px;
+            z-index: 4;
+            position: absolute;
+            padding: 0 15px;
+            margin: 0;
+        }
+
+
+
+        input {
+            border: none;
+            width: 100%;
+            height: 55px;
+            padding: 0 15px;
+        }
+
+
+
+        .inputBorderRight {
+            border-right: $inputBorder;
+        }
+
+        .inputBorderBottom {
+            border-bottom: $inputBorder;
+        }
+
+        input:focus {
+            border: 1px solid #369e3b;
+            box-shadow: 0 0 8px 1px rgba(90, 160, 10, 0.6);
+
+        }
+
+
+    }
+
+    .inputBorderTop {
+        border-top: 1px solid #dce2e5;
+    }
+
+    .inputBorderLeft {
+        border-left: $inputBorder;
+    }
+
+    .submitBtn {
+        margin-top: 10px;
+        width: 100%;
+        background-color: #a0db2a;
+        color: #00602c;
+        font-family: flama;
+        border-radius: 4px;
+        border: 0;
+        height: 55px;
+    }
+
+    .addDiscount {
+        margin-top: 10px;
+
+    }
+
+}
+
+@media (max-height: 550px) {
+    .sideNav {
+
+        .find_tickets {
+            border: 0;
+            width: 100%;
+            margin-left: 0;
+            background: 0;
+        }
+    }
+}

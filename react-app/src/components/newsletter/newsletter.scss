@@ -1,0 +1,41 @@
+.newsletterContainer {
+    width: 93.4%;
+    margin: 5% auto;
+    padding: 30px 50px 30px 50px;
+    max-width: 1024px;
+    background: #1f8226;
+    background: linear-gradient(106deg, #1f8226, #00602c);
+    color: #fff;
+
+    .p0 {
+        padding: 0;
+    }
+
+    form {
+        .form-control {
+            border-radius: 0px;
+            height: 50px;
+
+            select,
+            .formField {
+                border-radius: 0;
+                height: 50px;
+                font-size: 1em;
+                font-family: flamabook;
+            }
+        }
+
+        .btn-submit-desktop {
+            font-family: flama;
+            font-size: 1.25em;
+            color: #00602c;
+            height: 50px;
+            background-color: #a0db2a;
+            border: 1px solid #a0db2a;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            line-height: .9;
+        }
+    }
+
+}

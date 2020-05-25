@@ -1,0 +1,26 @@
+.fourcard-contiainer {
+
+    margin: 20px;
+
+    .gallery {
+        min-height: 100%;
+
+        a {
+            text-decoration: none;
+            color: #4d4e50;
+        }
+
+        .imgContainer img {
+            transition: transform .5s ease;
+        }
+
+        .imgContainer:hover img {
+            transform: scale(1.1);
+        }
+
+        .card:hover h3 {
+            text-decoration: underline;
+        }
+
+    }
+}

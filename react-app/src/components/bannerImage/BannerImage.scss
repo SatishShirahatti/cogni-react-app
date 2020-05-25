@@ -1,0 +1,152 @@
+.heroBanner {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.heroBanner .caption_homebanner {
+    bottom: 10%;
+    max-width: 1024px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    transform: none;
+    width: 93.4%;
+    top: auto;
+    text-align: left;
+}
+
+.caption_Fbanner {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-family: Flama;
+    font-weight: 500;
+    text-transform: uppercase;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+
+.heroBanner .bannerDesc {
+    display: block;
+    font-family: flama_semibold;
+    font-size: 2.25em;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.6em;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+.heroBanner .caption_homebanner>div {
+    /* max-width: 424px; */
+    float: right;
+}
+
+.bestoffersGreen,
+.heroBanner .bestoffers {
+    font-size: 1.25em;
+    min-height: 50px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    vertical-align: middle;
+    line-height: 1.2em;
+    font-family: Flama;
+    margin-top: 20px;
+    text-transform: none;
+}
+
+.heroBanner .bannerOpacity>div {
+    padding: 20px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.homeBanner .bestoffersGreen {
+    background: #b0e665;
+    height: 39px;
+    border-radius: 4px;
+    font-size: 14px;
+    display: inline-block;
+    line-height: normal;
+    font-family: 'flamamedium', sans-serif;
+    padding: 12px 29px;
+    color: #15483b;
+    box-shadow: none;
+    margin-top: 4%;
+}
+
+.act_btn {
+    min-width: 200px;
+}
+
+.heroBanner img {
+    z-index: -100;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: auto;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+@keyframes fadeInImg {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.img-loading {
+    border: 1px solid red;
+    opacity: 0;
+    width: 100%;
+    height: auto
+}
+
+.img-loaded {
+    border: 1px solid green;
+    animation: fadeInImg cubic-bezier(0.23, 1, 0.32, 1) 1;
+    position: relative;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-duration: 0.7s;
+    animation-delay: 0.1s;
+}
+
+
+.img-responsive,
+.thumbnail>img,
+.thumbnail a>img,
+.carousel-inner>.item>img,
+.carousel-inner>.item>a>img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.loading {
+    border: 1px solid red;
+}
+
+@media (max-width: 1366px) {
+    .captionText {
+        font-size: 30px;
+    }
+
+    .bannerBtn {
+        font-size: 16px;
+    }
+}

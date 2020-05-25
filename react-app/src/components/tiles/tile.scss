@@ -1,0 +1,93 @@
+@import '../../styles/shared';
+
+$icon-size-lg: 46px;
+$icon-size-md: 40px;
+$icon-size-sm: 32px;
+
+.tile-container {
+    display: flex;
+    flex-direction: column;
+
+    .callouts {
+        width: 93.4%;
+        margin: 0 auto;
+
+        ul {
+            border: 0 solid #e5e5e5;
+            border-width: 1px;
+            display: inline-flex;
+            width: 100%;
+            margin: 10px 0;
+            border-radius: 4px;
+
+            li {
+                list-style: none;
+                padding: 2px;
+                margin: 0;
+                border: solid 1px #e5e5e5;
+                border-width: 0 1px 0 0;
+
+                &:hover {
+                    z-index: 200;
+                    border-color: transparent;
+                    box-shadow: 0 0 5px #dce2e5;
+                    opacity: 1;
+                    transform: scale(1.2);
+                    background: white;
+                }
+
+                a {
+                    width: 100%;
+                    min-height: 129px;
+                    display: inline-block;
+                    border-radius: 4px;
+                    padding: 15px 0;
+                    text-align: center;
+                    background: white;
+                    font-size: 1.25em;
+                    font-family: flamabook;
+                    margin: 3px 0;
+                    color: #4d4e50;
+
+                    span.imgWrap {
+                        display: block;
+                        min-height: 62px;
+                        min-width: 64px;
+                        padding-top: 20px;
+
+                        :hover {
+                            outline: none !important;
+                        }
+
+                        img {
+                            vertical-align: middle;
+                            width: 42px;
+                            height: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include media(tablet, desktop) {
+        //  height: $header-height-big;
+    }
+
+}
+
+
+
+
+
+@include media(desktop) {
+    width: $icon-size-lg;
+    height: $icon-size-lg;
+    font-size: 26px;
+}
+
+@include media(tablet) {
+    width: $icon-size-md;
+    height: $icon-size-md;
+    font-size: 22px;
+}

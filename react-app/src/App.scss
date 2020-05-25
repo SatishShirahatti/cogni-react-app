@@ -1,0 +1,35 @@
+.m0 {
+    margin: 0;
+}
+
+.pad0 {
+    padding: 0;
+}
+
+.Wideroe_cnt_left {
+    background: url("./assets/images/sidebarWideNew.svg") no-repeat, linear-gradient(329deg, #00602c, #1f8226);
+    background-size: contain;
+    background-position: center bottom;
+    width: 270px;
+    padding: 0;
+    height: 100%;
+    position: fixed;
+    z-index: 7;
+    float: left
+}
+
+.Wideroe_cnt_right {
+    width: calc(100% - 270px);
+    background-color: #fff;
+    min-height: calc(100vh - 84px);
+    float: right;
+    position: relative;
+    z-index: 6;
+    margin-top: 84px;
+}
+
+@media screen and (min-width: 768px) {
+    .Wideroe_cnt_left {
+        z-index: 9 !important;
+    }
+}
