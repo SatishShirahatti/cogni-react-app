@@ -1,5 +1,6 @@
 import { call, put, takeEvery, takeLatest, all } from 'redux-saga/effects';
-import { AirportList_Success, AirportList_Start, AirportList_Failure} from "./airportlist.action";
+import * as AirportListActionTypes from './airportlist.types';
+import { AirportList_Success, AirportList_Failure} from "./airportlist.action";
 import fetchData from "./aiportApi"
 
 export function* getAirportApiData() {
@@ -14,7 +15,7 @@ try {
 }
 export function* fetchAirportList() {
 	yield takeLatest(
-		AirportList_Start,
+		AirportListActionTypes.FETCH_AIRPORTLIST_START,
 		getAirportApiData
 	);
 }

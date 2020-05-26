@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar, NavItem, NavDropdown, MenuItem, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, NavDropdown, Nav } from 'react-bootstrap';
 import Modal from "../modelBox/modelbox";
 import MenuItems from "../MenuItems/MenuItems"
 require('./navbar.scss');
@@ -23,8 +23,8 @@ const Menu = () => {
 							<NavDropdown.Divider />
 							<NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
 						</NavDropdown>
-						<Nav.Link eventKey={2} className="d-none d-lg-block">
-							<div >
+
+							<div className="d-none d-lg-block" >
 								<button type="button" className="menu_btn" onClick={() => setStatus(true)}
 									data-toggle="collapse" data-target="#wdMenu" aria-expanded="false" aria-controls="wdMenu">
 									<span>
@@ -37,9 +37,8 @@ const Menu = () => {
 								{status && (<Modal closeModal={() => setStatus(false)}> 
 									<MenuItems/>
 
-</Modal>)}
+							</Modal>)}
 							</div>
-						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Navbar >

@@ -1,5 +1,6 @@
 //import { AirportList_Start, AirportList_Success, AirportList_Failure}  from './airportlist.action';
-import AirportListActionTypes from "./airportlist.types";
+
+import * as AirportListActionTypes from './airportlist.types';
 import  fetchData from "./aiportApi"
 
 

@@ -7,7 +7,7 @@
 // export const receiveApiData = (airportList) => ({ type: RECEIVE_API_DATA, airportList })
 
 
-import AirportListActionTypes from './airportlist.types';
+import * as AirportListActionTypes from './airportlist.types';
 
 export const AirportList_Start = () => ({
 	type: AirportListActionTypes.FETCH_AIRPORTLIST_START
