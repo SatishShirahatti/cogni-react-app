@@ -17,7 +17,7 @@ require('./newsletter.scss');
 
     render() {
 		const { Airport } = this.props;
-		console.log("here",this.props.Airport.airportList.airports)
+
         return (
             <div className="newsletterContainer">
                 <div className="row m0">
