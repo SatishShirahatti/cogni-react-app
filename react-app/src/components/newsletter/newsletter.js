@@ -17,7 +17,7 @@ require('./newsletter.scss');
 
     render() {
 		const { Airport } = this.props;
-		console.log(this.props.Airport)
+		console.log("here",this.props.Airport.airportList.airports)
         return (
             <div className="newsletterContainer">
                 <div className="row m0">
@@ -36,7 +36,7 @@ require('./newsletter.scss');
 										<select className="form-control form-field" data-toggle="dropdown" aria-describedby="formPrefAirportError"
 											required="required" aria-required="true" aria-invalid="false" aria-expanded="false">
 											<option className="preferredOption" value="" disabled="disabled">- Velg -</option>
-											{Airport.airports && Airport.airports.map((airport, i) => ((
+											{Airport.airportList && Airport.airportList.airports && Airport.airportList.airports.map((airport, i) => ((
 												<option label={airport.city} value={airport.airportCode} key={i}>{airport.airport}</option>
 											))
 											)}

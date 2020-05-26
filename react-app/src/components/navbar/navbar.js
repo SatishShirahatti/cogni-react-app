@@ -8,7 +8,7 @@ const Menu = () => {
 	const [status, setStatus] = useState(false);
 	return (
 		<div>
-			<Navbar collapseOnSelect expand="lg" bg="light" variant="light" >
+			<Navbar collapseOnSelect expand="lg"  variant="light" >
 				<Navbar.Brand href="#home">Wideroe</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav ">

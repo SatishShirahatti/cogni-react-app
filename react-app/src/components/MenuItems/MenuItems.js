@@ -37,12 +37,12 @@ return (
 				{
 							Menu_Data.Menu_items.map((item,index)=>((
 								<Col sm={12} md={6} key={index}>
-									<span role="listitem">
-										<Nav.Link to={item.Link}>
+									<div role="listitem">
+										<Link to={item.Link}>
 											{item.Name}<span className="sr-only ng-binding"></span>
 											<ArrowRight style={{ float: 'right' }} color="#4d4e50" size={20} />
-										</Nav.Link>
-									</span>
+										</Link>
+									</div>
 								</Col>
 
 		)))							
