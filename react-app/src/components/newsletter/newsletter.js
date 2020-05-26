@@ -15,9 +15,9 @@ require('./newsletter.scss');
 
  class Newsletter extends Component {
 
-
     render() {
 		const { Airport } = this.props;
+		console.log(this.props.Airport)
         return (
             <div className="newsletterContainer">
                 <div className="row m0">

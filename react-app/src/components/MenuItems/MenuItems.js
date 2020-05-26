@@ -1,13 +1,15 @@
 import React from "react";
 import {Link} from "react-router-dom"
-import { Navbar, NavItem, NavDropdown, MenuItem, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Nav,Form } from 'react-bootstrap';
 import { ArrowRight } from 'react-bootstrap-icons';
 import { Container, Row, Col } from 'react-bootstrap';
+import Menu_Data from "./menuData";
 require('./Menuitems.scss');
 
 
 const  MenuItems =() =>{
 
+	console.log(Menu_Data.Menu_items)
 return (
 
 	<div className="modal-body">
@@ -32,78 +34,25 @@ return (
 			<Row className="row100">
 			<Col xs={12} sm={12} md={8}>
 				<Row>
-						<Col sm={12} md={6}>
-							<span role="listitem">
-								<Link to="/innsjekk.html">
-									Sjekk inn <span className="sr-only ng-binding"></span>
-									<ArrowRight style={{ float: 'right' }} color="#4d4e50" size={20} />
-								</Link>
-							</span>
-						</Col>
-						<Col sm={12} md={6}>
-							<span role="listitem">
-								<Link to="/innsjekk.html">
-									fly-i-rute <span className="sr-only ng-binding"></span>
-									<ArrowRight style={{ float: 'right' }} color="#4d4e50" size={20} />
-								</Link>
-							</span>
-						</Col>
-						<Col sm={12} md={6}>
-							<span role="listitem">
-								<Link to="/innsjekk.html">
-									destinasjoner <span className="sr-only ng-binding"></span>
-									<ArrowRight style={{ float: 'right' }} color="#4d4e50" size={20} />
-								</Link>
-							</span>
-						</Col>
-						<Col sm={12} md={6}>
-							<span role="listitem">
-								<Link to="/innsjekk.html">
-									vare-billigste-flybilletter <span className="sr-only ng-binding"></span>
-									<ArrowRight style={{ float: 'right' }} color="#4d4e50" size={20} />
-								</Link>
-							</span>
-						</Col>
-						<Col sm={12} md={6}>
-							<span role="listitem">
-								<Link to="/innsjekk.html">
-									mine-reiser-gjest <span className="sr-only ng-binding"></span>
-									<ArrowRight style={{ float: 'right' }} color="#4d4e50" size={20} />
-								</Link>
-							</span>
-						</Col>
-						<Col sm={12} md={6}>
-							<span role="listitem">
-								<Link to="/innsjekk.html">
-									bedriftsportal <span className="sr-only ng-binding"></span>
-									<ArrowRight style={{ float: 'right' }} color="#4d4e50" size={20} />
-								</Link>
-							</span>
-						</Col>
-						<Col sm={12} md={6}>
-							<span role="listitem">
-								<Link to="/innsjekk.html">
-									hjelp-og-kontakt <span className="sr-only ng-binding"></span>
-									<ArrowRight style={{ float: 'right' }} color="#4d4e50" size={20} />
-								</Link>
-							</span>
-						</Col>
-						<Col sm={12} md={6}>
-							<span role="listitem">
-								<Link to="/innsjekk.html">
-									sok <span className="sr-only ng-binding"></span>
-									<ArrowRight style={{ float: 'right' }} color="#4d4e50" size={20} />
-								</Link>
-							</span>
-						</Col>
+				{
+							Menu_Data.Menu_items.map((item,index)=>((
+								<Col sm={12} md={6} key={index}>
+									<span role="listitem">
+										<Nav.Link to={item.Link}>
+											{item.Name}<span className="sr-only ng-binding"></span>
+											<ArrowRight style={{ float: 'right' }} color="#4d4e50" size={20} />
+										</Nav.Link>
+									</span>
+								</Col>
 
-
+		)))							
+				}
 			</Row>
 			</Col>
 				<Col xs={12} sm={12} md={4} >
 					<Form className="dropdown-form">
 							<div className="form-group ">
-								<label for="prefAirport">Velg din flyplass</label>
+							<label htmlFor="prefAirport">Velg din flyplass</label>
 								<select className="form-control" name="" id="">
 									<option label="Aberdeen (ABZ)" value="string:ABZ">Aberdeen (ABZ)</option>
 									<option label="Aberdeen (ABZ)" value="string:ABZ">Aberdeen (ABZ)</option>
@@ -112,7 +61,7 @@ return (
 									<option label="Aberdeen (ABZ)" value="string:ABZ">Aberdeen (ABZ)</option>
 								</select>
 							</div>
-						<button class="hidden-xs" type="button" disabled="disabled">Endre</button>
+						<button className="hidden-xs" type="button" disabled="disabled">Endre</button>
 					</Form>
 				</Col>
 		</Row>

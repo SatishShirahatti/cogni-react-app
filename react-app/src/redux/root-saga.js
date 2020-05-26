@@ -9,7 +9,7 @@ export default function* rootSaga() {
 	yield all([
 	call(RightNowSagas),
 	call(FourCardSagas),
-	call(AirportListSaga)
+	//call(AirportListSaga)
 ]
 );
 }

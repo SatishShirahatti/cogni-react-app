@@ -11,6 +11,7 @@ import TravelTip from "./components/TravelTips/traveltip";
 import Newsletter from "./components/newsletter/newsletter";
 import Sidenav from "./components/sidenav/sidenav";
 import Header from "./components/header/Header";
+import Footer from "./components/footer/footer";
 //import axios from 'axios';
 
 
@@ -65,6 +66,7 @@ class App extends Page {
 							<Newsletter></Newsletter>
 						</div>
 					</div>
+						<Footer/>
 					{this.childComponents}
 					{this.childPages}
 				</div>
