@@ -1,7 +1,12 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import Header from "../../header/Header";
 import { withRoute } from '../../../utils/RouteHelper';
+import { createSelector } from 'reselect';
+import selectjobNorge from "../../../redux/JobNorge/jobnorge.selectors";
+import { connect } from 'react-redux';
+import { bindActionCreators } from "redux"
+import { FetchJobNorge_Start } from "../../../redux/JobNorge/jobnorge.action";
 import { Page, MapTo, withComponentMappingContext } from "@adobe/cq-react-editable-components";
 require('./Homepage.scss');
 
@@ -50,7 +55,13 @@ render(){
 }
 
 }
+ const mapStateToProps = createSelector(
+	 selectjobNorge,
+	 Job => ({ Job: Job})		
+)
 
+const mapDispatchToProps = dispatch => bindActionCreators({ FetchJobNorge_Start }, dispatch)
 
-MapTo('wknd-events/components/structure/page/FirstArticle')(withComponentMappingContext(withRoute(JobNorge)));
+const jobNorgeWithConnect = connect(mapStateToProps, mapDispatchToProps)(JobNorge)
+MapTo('wknd-events/components/structure/page/FirstArticle')(withComponentMappingContext(withRoute(jobNorgeWithConnect)));
 
