@@ -1,16 +1,17 @@
 
+
 import * as JobNorgeActionTypes from './jobnorge.types';
 
-export const FetchJobNorge_Start = () => ({
-	type: JobNorgeActionTypes.FETCH_JOBNORGELIST_START
+export const JobNorgeData_Start = () => ({
+	type: JobNorgeActionTypes.FETCH_JOBNORGE_START
 });
 
-export const FetchJobNorge_Success = (jobNorgeList) => ({
-	type: JobNorgeActionTypes.FETCH_JOBNORGELIST_SUCCESS,
-	payload: jobNorgeList
+export const JobNorgeData_Success = (JobNorgeData) => ({
+	type: JobNorgeActionTypes.FETCH_JOBNORGE_SUCCESS,
+	payload: JobNorgeData
 });
 
-export const FetchJobNorge_Failure = errorMessage => ({
-	type: JobNorgeActionTypes.FETCH_JOBNORGELIST_ERROR,
+export const JobNorgeData_Failure = errorMessage => ({
+	type: JobNorgeActionTypes.FETCH_JOBNORGE_ERROR,
 	payload: errorMessage
 });

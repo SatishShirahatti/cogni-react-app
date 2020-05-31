@@ -17,6 +17,7 @@ require('./newsletter.scss');
 
     render() {
 		const { Airport } = this.props;
+		console.log("airport newletter", Airport)
 
         return (
             <div className="newsletterContainer">

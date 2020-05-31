@@ -2,7 +2,7 @@
 const fetchData = async() =>{
 
 	try {
-	const response = await fetch("https://dev-api.wideroe.no/booking/allairports");
+		const response = await fetch("https://dev-api.wideroe.no/booking/allairports");
 		const airportList= response.json();
 		return airportList;
 

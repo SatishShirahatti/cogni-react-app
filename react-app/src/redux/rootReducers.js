@@ -5,7 +5,7 @@ import storage from 'redux-persist/lib/storage';
 import RightNowReducer from './rightnow/rightnow.reducer';
 import FourCardReducer from './fourcards/fourcard.reducer';
 import AirportListReducer from './airportList/airportlist.reducer';
-import JobNorgeReducer from './JobNorge/jobnorge.reducer';
+import JobNorgeReducer from './jobNorge/jobnorge.reducer';
 
 
 const persistConfig = {
@@ -18,7 +18,7 @@ const rootReducer = combineReducers({
 	rightNow: RightNowReducer,
 	fourcard: FourCardReducer,
 	airportList: AirportListReducer,
-	jobNorgeList: JobNorgeReducer,
+	jobNorge: JobNorgeReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

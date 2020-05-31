@@ -1,23 +1,32 @@
 
-import React from 'react';
+import React, { Component } from 'react';
 import Header from "../../header/Header";
 import { withRoute } from '../../../utils/RouteHelper';
 import { createSelector } from 'reselect';
-import selectjobNorge from "../../../redux/JobNorge/jobnorge.selectors";
+import selectjobNorge from "../../../redux/jobNorge/jobnorge.selectors";
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux"
-import { FetchJobNorge_Start } from "../../../redux/JobNorge/jobnorge.action";
+import { JobNorgeData_Start } from "../../../redux/jobNorge/jobnorge.action";
 import { Page, MapTo, withComponentMappingContext } from "@adobe/cq-react-editable-components";
 require('./Homepage.scss');
 
-export default class JobNorge extends Page {
+export default class JobNorge extends Component {
 
 	get containerProps() {
 		let attrs = super.containerProps;
 		attrs.className = (attrs.className || '') + ' WkndPage ' + (this.props.cssClassNames || '');
 		return attrs
 	}
+componentDidMount(){
+	console.log("in mount", this.props);
+	//this.props.JobNorgeData_Start();
+}
+
+
 render(){
+	const { jobNorge} = this.props;
+	console.log("jobdata", this.props)
+	console.log("jobdata full data", jobNorge)
  return(
 <div>
  <Header/>
@@ -57,11 +66,11 @@ render(){
 }
  const mapStateToProps = createSelector(
 	 selectjobNorge,
-	 Job => ({ Job: Job})		
-)
+	 jobNorge => ({ jobNorge: jobNorge})		
+);
 
-const mapDispatchToProps = dispatch => bindActionCreators({ FetchJobNorge_Start }, dispatch)
+//const mapDispatchToProps = dispatch => bindActionCreators({ JobNorgeData_Start }, dispatch)
 
-const jobNorgeWithConnect = connect(mapStateToProps, mapDispatchToProps)(JobNorge)
+const jobNorgeWithConnect = connect(mapStateToProps, {JobNorgeData_Start})(JobNorge)
 MapTo('wknd-events/components/structure/page/FirstArticle')(withComponentMappingContext(withRoute(jobNorgeWithConnect)));
 

@@ -1,25 +1,25 @@
 import { call, put, takeLatest, all } from 'redux-saga/effects';
 import * as JobNorgeActionTypes from './jobnorge.types';
-import { FetchJobNorge_Success, FetchJobNorge_Failure} from "./jobnorge.action";
-import fetchJobData from "./jobnorgeApi"
+import { JobNorgeData_Success, JobNorgeData_Failure} from "./jobnorge.action";
+import fetchData from "./jobNorgeApi"
 
-export function* getJobNorgeData() {
+export function* getJobNorgeApiData() {
 
 try {
-	const jobNorgeList = yield call(fetchJobData);
-	yield put(FetchJobNorge_Success(jobNorgeList))
+	const JobNorgeData = yield call(fetchData);
+	yield put(JobNorgeData_Success(JobNorgeData))
 } catch (error) {
-	yield put(FetchJobNorge_Failure())
+	yield put(JobNorgeData_Failure())
 }
 
 }
-export function* fetchJobNorge() {
+export function* fetchJobNorgeData() {
 	yield takeLatest(
-		JobNorgeActionTypes.FETCH_JOBNORGELIST_START,
-		getJobNorgeData
+		JobNorgeActionTypes.FETCH_JOBNORGE_START,
+		getJobNorgeApiData
 	);
 }
 
 export function* JobNorgeSaga() {
-	yield all([call(fetchJobNorge)]);
+	yield all([call(fetchJobNorgeData)]);
 }

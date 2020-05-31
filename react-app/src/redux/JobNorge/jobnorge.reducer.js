@@ -1,11 +1,10 @@
-//import { AirportList_Start, AirportList_Success, AirportList_Failure}  from './airportlist.action';
 
 import * as JobNorgeActionTypes from './jobnorge.types';
-import fetchJobData from "./jobnorgeApi";
+import  fetchData from "./jobNorgeApi"
 
 
 const INITIAL_STATE = {
-	jobNorgeList: fetchJobData,
+	JobNorgeData: fetchData,
 	isFetching: false,
 	errorMessage: undefined
 };
@@ -13,19 +12,19 @@ const INITIAL_STATE = {
 
 const JobNorgeReducer = (state = INITIAL_STATE, action) => {
 	switch (action.type) {
-		case JobNorgeActionTypes.FETCH_JOBNORGELIST_START:
+		case JobNorgeActionTypes.FETCH_JOBNORGE_START:
 			return {
 				...state,
 				isFetching: true
 
 			};
-		case JobNorgeActionTypes.FETCH_JOBNORGELIST_SUCCESS:
+		case JobNorgeActionTypes.FETCH_JOBNORGE_SUCCESS:
 			return {
 				...state,
-				jobNorgeList: action.payload,
+				JobNorgeData: action.payload,
 				isFetching: false,
 			};
-		case JobNorgeActionTypes.FETCH_JOBNORGELIST_ERROR:
+		case JobNorgeActionTypes.FETCH_JOBNORGE_ERROR:
 			return {
 				...state,
 				isFetching: false,
