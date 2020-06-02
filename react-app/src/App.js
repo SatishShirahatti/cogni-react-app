@@ -1,8 +1,6 @@
 import React, { Suspense } from 'react';
 //import { connect } from 'react-redux'
 import { Page, withModel } from '@adobe/cq-react-editable-components';
-import { Switch, Route } from 'react-router-dom';
-//import Header from './components/header/Header';
 import Tile from "./components/tiles/tile";
 import RightNow from "./components/rightNow/rightnow";
 //import BannerImage from "./components/bannerImage/BannerImage";

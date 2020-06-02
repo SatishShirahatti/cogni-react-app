@@ -1,12 +1,5 @@
 
 
-// export const REQUEST_API_DATA = "REQUEST_API_DATA";
-// export const RECEIVE_API_DATA = "RECEIVE_API_DATA";
-
-// export const requestApiData = () => ({ type: REQUEST_API_DATA});
-// export const receiveApiData = (airportList) => ({ type: RECEIVE_API_DATA, airportList })
-
-
 import * as AirportListActionTypes from './airportlist.types';
 
 export const AirportList_Start = () => ({

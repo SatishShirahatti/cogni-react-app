@@ -4,35 +4,47 @@ import Header from "../../header/Header";
 import { withRoute } from '../../../utils/RouteHelper';
 import { createSelector } from 'reselect';
 import selectjobNorge from "../../../redux/jobNorge/jobnorge.selectors";
-import { connect } from 'react-redux';
-import { bindActionCreators } from "redux"
 import { JobNorgeData_Start } from "../../../redux/jobNorge/jobnorge.action";
-import { Page, MapTo, withComponentMappingContext } from "@adobe/cq-react-editable-components";
+import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
+import { MapTo, withComponentMappingContext } from "@adobe/cq-react-editable-components";
 require('./Homepage.scss');
 
+const API = 'https://dev-api.wideroe.no/jobbnorge/v1/jobs/retrieve?language=nb';
 export default class JobNorge extends Component {
 
+constructor(props){
+super(props);
+
+	this.state ={
+	jobdata :null
+}
+}
 	get containerProps() {
 		let attrs = super.containerProps;
 		attrs.className = (attrs.className || '') + ' WkndPage ' + (this.props.cssClassNames || '');
 		return attrs
 	}
 componentDidMount(){
-	console.log("in mount", this.props);
-	//this.props.JobNorgeData_Start();
+	fetch(API)
+	.then(response => response.json())
+	.then(data => this.setState({ data }));
+
 }
 
 
 render(){
-	const { jobNorge} = this.props;
+	const { data } = this.state;
 	console.log("jobdata", this.props)
-	console.log("jobdata full data", jobNorge)
+	console.log("jobdata full data", data)
  return(
 <div>
  <Header/>
 		 <div className="jobVacancies section">
 			 <div className="jobNorgeContainer hidden-xs">
-			 <div className="title">Ledige stillinger</div>
+		{ data && data.map((item, index)=>(
+	<div key={index}>
+				<div className="title">Pilot</div>
 			 <div className="subHeader">Her finner du en oversikt over ledige stillinger i Widerøe-konsernet</div>
 			 <div className="jobs">
 				 <div className="row headerFields">
@@ -40,23 +52,22 @@ render(){
 					 <div className="col-3 ">Plassering</div>
 					 <div className="col-3 "> Frist</div>
 				 </div>
-			<div className="ng-scope">
-					 <a ng-href="https://www.jobbnorge.no/ledige-stillinger/stilling/183777/pilot" target="_blank" href="https://www.jobbnorge.no/ledige-stillinger/stilling/183777/pilot" aria-label="Pilot
-				Widerøes Flyveselskap
-				Base tildeles etter behov
-				Løpendeopens in a new window">
+			<div>
 						 <div className="row jobRow">
 							 <div className="col-6 ">
-								 <div className="positionTitle ng-binding">Pilot</div>
-								 <div className="postitionDescription ng-binding">Widerøes Flyveselskap</div>
+						<Link to={item.link} target="_blank" aria-label={item.description}>
+									<div className="positionTitle ">{item.positiontitle}</div>
+									<div className="postitionDescription">{item.description}</div>
+						 </Link>
 							 </div>
-							 <div className="col-3 ng-binding">Base tildeles etter behov</div>
-							 <div className="col-3 paddingDeadline ng-binding">Løpende</div>
+								<div className="col-3">{item.location}</div>
+								<div className="col-3 paddingDeadline ">{item.deadline}</div>
 							 <i className="fa fa-angle-right arrowIcon"></i>
 						 </div>
-					 </a>
 				 </div>
             </div>
+	</div>
+		))	}
 		 </div>
 		 </div>
 </div>
@@ -72,5 +83,6 @@ render(){
 //const mapDispatchToProps = dispatch => bindActionCreators({ JobNorgeData_Start }, dispatch)
 
 const jobNorgeWithConnect = connect(mapStateToProps, {JobNorgeData_Start})(JobNorge)
-MapTo('wknd-events/components/structure/page/FirstArticle')(withComponentMappingContext(withRoute(jobNorgeWithConnect)));
+MapTo('wknd-events/components/structure/page/FirstArticle')
+(withComponentMappingContext(withRoute(jobNorgeWithConnect)));
 

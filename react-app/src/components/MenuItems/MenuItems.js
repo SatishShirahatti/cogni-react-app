@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom"
-import { Nav,Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { ArrowRight } from 'react-bootstrap-icons';
 import { Container, Row, Col } from 'react-bootstrap';
 import Menu_Data from "./menuData";
@@ -38,7 +38,7 @@ return (
 							Menu_Data.Menu_items.map((item,index)=>((
 								<Col sm={12} md={6} key={index}>
 									<div role="listitem">
-										<Link to={item.Link}>
+										<Link to={item.Link} target="_blank">
 											{item.Name}<span className="sr-only ng-binding"></span>
 											<ArrowRight style={{ float: 'right' }} color="#4d4e50" size={20} />
 										</Link>

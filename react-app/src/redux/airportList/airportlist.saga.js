@@ -1,4 +1,4 @@
-import { call, put, takeEvery, takeLatest, all } from 'redux-saga/effects';
+import { call, put, takeLatest, all } from 'redux-saga/effects';
 import * as AirportListActionTypes from './airportlist.types';
 import { AirportList_Success, AirportList_Failure} from "./airportlist.action";
 import fetchData from "./aiportApi"

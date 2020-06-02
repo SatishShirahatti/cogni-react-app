@@ -1,11 +1,12 @@
 
 const fetchJobNorgeData = async() =>{
 //https://dev-api.wideroe.no/jobbnorge/v1/jobs/retrieve?language=nb
+//https://dev-api.wideroe.no/booking/allairports
 console.log("fetch");
 	try {
 		const response = await fetch("https://dev-api.wideroe.no/jobbnorge/v1/jobs/retrieve?language=nb");
-		const JobNorgeData= response.json();
-		return JobNorgeData;
+		const data= response.json();
+		return data;
 
 		
 	} catch (error) {

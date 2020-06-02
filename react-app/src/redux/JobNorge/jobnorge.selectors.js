@@ -1,13 +1,14 @@
 import { createSelector } from 'reselect';
 
-export default state => state.JobNorge;
+const selector = state => state.JobNorge;
+export default selector;
 
 export const selectCollections = createSelector(
-	//[selectRightNow],
+	selector,
 	JobNorge => JobNorge.collections
 );
 
 export const selectIsCollectionFetching = createSelector(
-	//	[selectRightNow],
+	selector,
 	JobNorge => JobNorge.isFetching
 );
